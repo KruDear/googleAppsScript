@@ -10,7 +10,7 @@ function myFunction() {
     msg = "วันนี้ไม่มีกิจกรรม";
   }
   else {
-    msg += "📢วันนี้มีทั้งหมด " + String(event.length) + " กิจกรรม ได้แก่\n\n";
+    msg += "วันนี้มีทั้งหมด " + String(event.length) + " กิจกรรม ได้แก่\n\n";
     msg += sendMessage(event);
   }
   var jsonData = {
@@ -33,10 +33,10 @@ function sendMessage(events) {
     var start = event.getStartTime().getHours() + ":" + ("0" + event.getStartTime().getMinutes()).slice(-2);
     var end = event.getEndTime().getHours() + ":" + ("0" + event.getEndTime().getMinutes()).slice(-2);
     if (event.isAllDayEvent()) {
-      msg += String(index + 1) + ") " + "เวลา : " + " ทั้งวัน" + "\n ❗เรื่อง : " + title + "\n\n";
+      msg += String(index + 1) + ") " + "เวลา : " + " ทั้งวัน" + "\n เรื่อง : " + title + "\n\n";
       return;
     }
-    msg += String(index + 1) + ") " + "เวลา : " + start + " - " + end + " น." + "\n❗เรื่อง : " + title + "\n\n";
+    msg += String(index + 1) + ") " + "เวลา : " + start + " - " + end + " น." + "\n เรื่อง : " + title + "\n\n";
   });
   return msg;
 }
